@@ -13,8 +13,7 @@ let eyelY = 0;
 let wristX = 0;
 let wristY = 0;
 
-// modes
-// "mouse", "sound", "motion"
+
 let mode = "mouse";
 
 let color_picker = document.getElementById("color-picker");
@@ -97,20 +96,19 @@ function gotPoses(poses) {
 }
 
 function modelLoaded() {
-  //console.log("poseNet ready");
+  
 }
 
 function draw() {
-  // this clears everything and leaves you with a transparent background
+ 
   clear();
   
-  // console.log(mode)
+  
   circleCursor.style("left", mouseX + "px");
   circleCursor.style("top", mouseY + "px");
   circleCursor.style.color = color_picker2.value;
 
-  //Mouse interaction
-  // modes are selected with the buttons
+
   if (mode === "mouse") {
     let textwidth = map(mouseX, 0, width, 62, 125);
     variableText.style("font-variation-settings", "'wdth' " + textwidth);
@@ -119,7 +117,7 @@ function draw() {
     variableText.style("font-weight", textweight);
     
   } else if (mode === "sound") {
-    //Sound interaction
+   
 
     if (mic) {
       let vol = mic.getLevel();
@@ -133,7 +131,7 @@ function draw() {
     }
   } else if (mode === "motion") {
 
-    // Motion interaction
+    
 
     image(video, 0, 0,windowWidth, windowHeight );
     tint(255, 30);
@@ -169,3 +167,8 @@ function soundon() {
 function motionon() {
   mode = "motion";
 }
+
+var button;
+var bgcolor;
+
+
